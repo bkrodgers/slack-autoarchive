@@ -5,6 +5,7 @@ import os
 import requests
 import sys
 import time
+import codecs
 
 #
 # This will archive inactive channels. The inactive period is in days as 'DAYS_INACTIVE'
@@ -150,7 +151,7 @@ def send_channel_message(channel_id, message):
 
 
 def write_log_entry(file_name, entry):
-  with open(file_name, 'a') as logfile:
+  with codecs.open(file_name, mode='a', encoding='utf-8') as logfile:
     logfile.write(entry + '\n')
 
 
